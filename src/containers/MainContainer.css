@@ -1,0 +1,11 @@
+.main-container-header{
+    height: 4em;
+    width: 100%;
+    border-radius: 1em 1em 0em 0em;
+    box-shadow: 0 0px 15px 0 rgb(65 132 234 / 75%);
+    display: flex;
+    justify-content: center;
+    color: #34495E;
+    font-weight: 500;
+    cursor: pointer;
+}

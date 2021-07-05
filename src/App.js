@@ -1,25 +1,35 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Redirect } from "react-router-dom";
+import Loadable from "react-loadable";
+import {FullScreenLoader} from './components/Loader/Loader';
+const Loading = () => <FullScreenLoader />;
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const AsyncAppPages = Loadable({
+  loader: () => import("./services/routes/AppRoutes"),
+  loading: Loading,
+});
+
+
+export class App extends Component {
+  render() {
+    return (
+      <Router>
+      <Switch>
+        <Redirect from="/" to="/players" exact />
+        <Route path="/players" component={AsyncAppPages} exact />
+        <Route path="/players/add" component={AsyncAppPages} exact />
+        {/* <Route
+          path="*"
+          component={() => (
+            <NotFound error_text={"Not Found"} error_code={404} />
+          )}
+        /> */}
+      </Switch>
+    </Router>
+    )
+  }
 }
 
-export default App;
+export default App

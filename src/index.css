@@ -5,9 +5,28 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 2em;
+  background-color: rgba(153, 145, 145, 0.171);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+@import url("./components/Loader/Loader.css");
+@import url("./containers/HomeScreen/HomeScreen.css");
+@import url("./containers/CreateScreen/CreateSreen.css");
+
+
+@import url("./containers/MainContainer.css");
+@import url("./components/TableRow/TableRow.css");
+
+@import url("./components/Input/Input.css");
+@import url("./components/Button/Button.css");
+
+@import url("./components/Card/Card.css");
+
+
+
