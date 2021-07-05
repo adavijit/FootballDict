@@ -1,11 +1,20 @@
-.main-container-header{
-    height: 4em;
-    width: 100%;
-    border-radius: 1em 1em 0em 0em;
-    box-shadow: 0 0px 15px 0 rgb(65 132 234 / 75%);
-    display: flex;
-    justify-content: center;
-    color: #34495E;
-    font-weight: 500;
-    cursor: pointer;
+.main-container-header {
+  height: 4em;
+  width: 100%;
+  border-radius: 1em 1em 0em 0em;
+  box-shadow: 0 0px 15px 0 rgb(65 132 234 / 75%);
+  display: flex;
+  justify-content: center;
+  color: #34495e;
+  font-weight: 500;
+  cursor: pointer;
+}
+.main-container-header img {
+  height: 3em;
+  width: 3em;
+  margin-right: 0.5em;
+  margin-top: 0.5em;
+}
+.main-container-header p {
+  align-self: center;
 }

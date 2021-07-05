@@ -1,64 +1,47 @@
 import React from "react";
+import Button from "../../components/shared/Button/Button";
 
-export default function HomeScreen() {
+export default function HomeScreen(props) {
   return (
-    <div className={"div-body"}>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a className="navbar-brand font-weight-bold" href="#">
-          Portfolio.
-        </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <a className="nav-link" href="#home">
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#about">
-                About
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#details">
-                Details
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <section id="home">
-        <div className="row">
-          <div className="col-lg-6 col-md-6 col-sm-6 content">
-            <h5>Hello friend.</h5>
-            <h1 className="font-weight-bold">My name is Fan</h1>
-            <p>“Be yourself; everyone else is already taken.”</p>
-            <div className="form-group">
-              <button className="btn btn-warning rounded-pill" href="#">
-                Hire me
-              </button>
-              <span>&nbsp; or &nbsp;</span>
-              <button className="btn btn-outline-light rounded-pill" href="#">
-                Tell me something
-              </button>
+    <section id="main-content">
+      <div id="football-home-ad">
+        <div className="football-home-ad-wrap">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-6 bp-ad-content-wrap">
+                <h1 className="bp-ad-title">
+                  MyHealth<i>One</i> introduces enhanced bill pay
+                </h1>
+                <p className="bp-ad-content">
+                  MyHealth<i>One</i> now offers an improved feature to make
+                  paying your hospital bills, tracking payments and managing
+                  multiple accounts even faster. Just click "Bill Pay" below or
+                  in the navigation bar to the left and get started.
+                </p>
+                <Button
+                  name={"See players"}
+                  className={"btn-banner"}
+                  onButtonClick={() => props.history.push("/players")}
+                />
+                <p
+                  className={"p-banner"}
+                  onClick={() => props.history.push("/players/add")}
+                >
+                  Add a player
+                </p>
+              </div>
+              <div className="hidden-xs hidden-sm col-md-6">
+                <div id="bp-img-container">
+                  <img
+                    className="bp-ad-img"
+                    src="https://img.icons8.com/cotton/2x/fa314a/football-ball.png"
+                  />
+                </div>
+              </div>
             </div>
           </div>
-          <div className="col-lg-6 col-md-6 col-sm-6 banner">
-            <div className="img-banner" />
-          </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
