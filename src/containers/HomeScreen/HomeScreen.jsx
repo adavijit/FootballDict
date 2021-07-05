@@ -10,13 +10,11 @@ export default function HomeScreen(props) {
             <div className="row">
               <div className="col-md-6 bp-ad-content-wrap">
                 <h1 className="bp-ad-title">
-                  MyHealth<i>One</i> introduces enhanced bill pay
+                  Football<i>Dict</i>
                 </h1>
                 <p className="bp-ad-content">
-                  MyHealth<i>One</i> now offers an improved feature to make
-                  paying your hospital bills, tracking payments and managing
-                  multiple accounts even faster. Just click "Bill Pay" below or
-                  in the navigation bar to the left and get started.
+                  Football<i>Dict</i> offers you a centralized database where
+                  you can store your favourite player details{" "}
                 </p>
                 <Button
                   name={"See players"}

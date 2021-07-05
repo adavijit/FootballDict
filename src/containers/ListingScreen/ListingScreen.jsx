@@ -34,7 +34,7 @@ class ListingScreen extends Component {
     if (this.props.fetching_players_details) {
       return <FullScreenLoader />;
     } else if (!_.isEmpty(this.props.fetch_error)) {
-      return <div>Something error</div>;
+      return <ErrorComponent message={"Something went wrong!"} />;
     } else if (this.props.players_details.length === 0) {
       return (
         <ErrorComponent
