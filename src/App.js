@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Redirect } from "react-router-dom";
 import Loadable from "react-loadable";
 import {FullScreenLoader} from './components/shared/Loader/Loader';
 import ErrorComponent from './components/shared/ErrorComponent/ErrorComponent';
+import './App.css';
+
+//Fallback loader
 const Loading = () => <FullScreenLoader />;
 
+//Loading component with dynamic imports
 const AsyncAppPages = Loadable({
   loader: () => import("./services/routes/AppRoutes"),
   loading: Loading,

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import HomeIcon from "../assets/home.png";
+import ErrorBoundary from "./ErrorBoundary/ErrorBoundary";
 export class MainContainer extends Component {
   getTempText = () => {
     if (this.props.location.pathname === "/players") {
@@ -29,7 +30,10 @@ export class MainContainer extends Component {
           </span>
           <p onClick={() => this.redirectToPatch()}>{this.getTempText()}</p>
         </div>
-        {this.props.children}
+        <ErrorBoundary>
+          {/* Renderrig different component based on different routes */}
+          {this.props.children}
+        </ErrorBoundary>
       </React.Fragment>
     );
   }

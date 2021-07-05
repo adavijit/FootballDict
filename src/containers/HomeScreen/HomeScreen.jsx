@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../../components/shared/Button/Button";
-
+import FootballImage from "../../assets/football.png";
 export default function HomeScreen(props) {
   return (
     <section id="main-content">
@@ -30,10 +30,7 @@ export default function HomeScreen(props) {
               </div>
               <div className="hidden-xs hidden-sm col-md-6">
                 <div id="bp-img-container">
-                  <img
-                    className="bp-ad-img"
-                    src="https://img.icons8.com/cotton/2x/fa314a/football-ball.png"
-                  />
+                  <img className="bp-ad-img" src={FootballImage} />
                 </div>
               </div>
             </div>
