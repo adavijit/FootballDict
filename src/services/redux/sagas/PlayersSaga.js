@@ -7,7 +7,7 @@ import { PlayerAtionTypes } from "../actiontypes/PlayerAtionTypes";
 import { fetchAllPlayersFailue, fetchAllPlayersSuccess, savePlayerFailue, savePlayerSuccess } from "../actions/PlayerActions";
 
 
-const url = `https://my-json-server.typicode.com/adavijit/josn-server-api`;
+const url = `https://intense-sands-48572.herokuapp.com`;
 
 console.log(url, "=> URL");
 

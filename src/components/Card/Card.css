@@ -1,6 +1,6 @@
 
   section.player-card {
-    /* width: 100%; */
+    width: 200px;
     position: relative;
     border-radius: 10px;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.13);
