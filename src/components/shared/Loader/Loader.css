@@ -54,7 +54,7 @@
   }
 
   .loader {
-    color: #ed6755;
+    color: rgb(65 132 234 / 95%);
     font-size: 20px;
     text-indent: -9999em;
     overflow: hidden;

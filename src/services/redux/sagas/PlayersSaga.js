@@ -5,11 +5,10 @@ import _ from "lodash";
 
 import { PlayerAtionTypes } from "../actiontypes/PlayerAtionTypes";
 import { fetchAllPlayersFailue, fetchAllPlayersSuccess, savePlayerFailue, savePlayerSuccess } from "../actions/PlayerActions";
+import Urls from "../../../constants/Urls";
 
 
-const url = `https://intense-sands-48572.herokuapp.com`;
-
-console.log(url, "=> URL");
+const url = Urls.API_URL;
 
 function* asyncFetchPlayers(action) {
   try {

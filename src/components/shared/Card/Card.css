@@ -32,6 +32,7 @@
     left: 50%;
     margin-left: -68px;
     z-index: 2;
+    object-fit: cover;
   }
   section.player-card header a.profile:after {
     content: "";

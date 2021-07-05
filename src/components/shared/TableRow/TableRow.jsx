@@ -1,6 +1,6 @@
 import React from 'react'
-import TableColumns from '../../constants/TableColumns'
-import FacePlaceholder from '../../assets/faceplaceholder.jpg'
+import TableColumns from '../../../constants/TableColumns'
+import FacePlaceholder from '../../../assets/faceplaceholder.jpg'
 export default function TableRow(props) {
     const player = props.player;
     return (

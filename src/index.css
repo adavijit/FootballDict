@@ -15,18 +15,18 @@ code {
 }
 
 
-@import url("./components/Loader/Loader.css");
+@import url("./components/shared/Loader/Loader.css");
 @import url("./containers/HomeScreen/HomeScreen.css");
 @import url("./containers/CreateScreen/CreateSreen.css");
 
 
 @import url("./containers/MainContainer.css");
-@import url("./components/TableRow/TableRow.css");
+@import url("./components/shared/TableRow/TableRow.css");
 
-@import url("./components/Input/Input.css");
-@import url("./components/Button/Button.css");
+@import url("./components/shared/Input/Input.css");
+@import url("./components/shared/Button/Button.css");
 
-@import url("./components/Card/Card.css");
+@import url("./components/shared/Card/Card.css");
 
 
 

@@ -1,111 +1,64 @@
-import React, { Component } from 'react'
-import { fetchAllPlayers } from '../../services/redux/actions/PlayerActions';
-import { withRouter } from "react-router-dom";
-import { connect } from "react-redux"
-import TableRow from '../../components/TableRow/TableRow';
-import Card from '../../components/Card/Card';
-import TableColumns from '../../constants/TableColumns';
-import GridIcon from '../../assets/grid.png'
-import TableIcon from '../../assets/table.png'
-import {FullScreenLoader} from '../../components/Loader/Loader';
-import _ from 'lodash'
-class HomeScreen extends Component {
-    constructor(props) {
-        super(props)
-    
-        this.state = {
-             table: false
-        }
-    }
+import React from "react";
 
-    componentDidMount(){
-        this.props.fetchAllPlayers(10)
-    }
-    componentDidUpdate(prevProps, prevState){
-      if(this.props.location.pathname !== prevProps.location.pathname){
-        this.props.fetchAllPlayers(10)
-      }
-  }
-
-    updateTable=()=>{
-      return this.props.players_details.map((player,key)=>{
-        return (
-          <TableRow player={player} key={key}/>
-        )
-      })
-    }
-
-    getTableView=()=>{
-      return( 
-            <table className="rwd-table">
-            <thead>
-              <tr>
-                {TableColumns.map((element,key)=>{
-                  return (<th key={key}>{element.name}</th>)
-                })}
-              </tr>
-            </thead>
-            <tbody>
-              {this.updateTable()}
-            </tbody>
-          </table>
-          )   
-    }
-    getGridView=()=>{
-      return (<div className={"card-main"}>
-      {this.props.players_details.map((player,key)=>{
-        return (
-            <Card player={player} key={key}/>
-        )
-      })}
-    </div>)
-
-
-    }
-    
-    getMainView=()=>{
-      if(this.props.fetching_players_details){
-        return <FullScreenLoader/>
-      }else if(!_.isEmpty(this.props.fetch_error)){
-        return <div>Something error</div>
-      }else{
-        return <React.Fragment>
-        
-        <div className={`switch-div`}>
-          <img src={GridIcon} alt="grid" className={`${!this.state.table ? 'switch-div-active' : ''}`}
-          onClick={()=>{this.setState({table: false})}}
-          />
-          <img src={TableIcon} alt="grid"  className={`${this.state.table ? 'switch-div-active' : ''}`}
-           onClick={()=>{this.setState({table: true})}}
-          />
-
+export default function HomeScreen() {
+  return (
+    <div className={"div-body"}>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a className="navbar-brand font-weight-bold" href="#">
+          Portfolio.
+        </a>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon" />
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+              <a className="nav-link" href="#home">
+                Home
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#about">
+                About
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#details">
+                Details
+              </a>
+            </li>
+          </ul>
         </div>
-        {this.state.table ? this.getTableView() : this.getGridView()}
-      </React.Fragment> 
-      }
-    }
-    
-    render() {
-      return this.getMainView()
-    }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchAllPlayers: (data) => {
-      dispatch(fetchAllPlayers(data));
-    }
-  };
-};
-const mapStateToProps = (state) => {
-  return {
-    players_details: state.PlayersReducer.players_details,
-    fetching_players_details: state.PlayersReducer.fetching_players_details,
-    fetch_error:  state.PlayersReducer.fetch_error,
-  }
-    
-};
-
-export default withRouter(
-    connect(mapStateToProps, mapDispatchToProps)(HomeScreen)
+      </nav>
+      <section id="home">
+        <div className="row">
+          <div className="col-lg-6 col-md-6 col-sm-6 content">
+            <h5>Hello friend.</h5>
+            <h1 className="font-weight-bold">My name is Fan</h1>
+            <p>“Be yourself; everyone else is already taken.”</p>
+            <div className="form-group">
+              <button className="btn btn-warning rounded-pill" href="#">
+                Hire me
+              </button>
+              <span>&nbsp; or &nbsp;</span>
+              <button className="btn btn-outline-light rounded-pill" href="#">
+                Tell me something
+              </button>
+            </div>
+          </div>
+          <div className="col-lg-6 col-md-6 col-sm-6 banner">
+            <div className="img-banner" />
+          </div>
+        </div>
+      </section>
+    </div>
   );
+}

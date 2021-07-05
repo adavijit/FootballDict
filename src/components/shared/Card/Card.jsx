@@ -1,4 +1,4 @@
-import FacePlaceholder from '../../assets/faceplaceholder.jpg'
+import FacePlaceholder from '../../../assets/faceplaceholder.jpg'
 export default function Card(props) {
 
     const player = props.player;
